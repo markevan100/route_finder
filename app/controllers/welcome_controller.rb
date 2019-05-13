@@ -36,7 +36,15 @@ class WelcomeController < ApplicationController
     @image = @@route_image
     doc = Nokogiri::HTML(open("https://www.mountainproject.com/route/#{@@id}"))
     body = doc.css('.comment-body')
-    @first = body.first.text.split(" \n")[0].strip
-    @last = body.last.text.split(" \n")[0].strip
+    if body.count > 1
+      @first = body.first.text.split(" \n")[0].strip
+      @last = body.last.text.split(" \n")[0].strip
+    elsif body.count == 1
+      @first = "This route currently only has one comment"
+      @last = body.last.text.split(" \n")[0].strip
+    else
+      @first = "Sorry, no comments for this route"
+      @last = "Sorry, no comments for this route"
+    end
   end
 end
