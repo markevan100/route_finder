@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>RouteFinder</title>
+    <%= Gon::Base.render_data %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,7 +10,11 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body id='home-body'>
+    <%= render 'layouts/nav' %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <div class="container">
     <%= yield %>
   </body>
 </html>
