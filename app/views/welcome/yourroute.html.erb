@@ -7,7 +7,7 @@
             <form>
               <div class="form-group routeInfo">
                 <div class="well well-lg each_box" id="testId">
-                  <h2 style="color:black;"><%= link_to "Your Route", welcome_comments_path %> </h2>
+                  <h2 style="color:black;"><%= link_to "Your Route", welcome_comments_path, method: :get %> </h2>
                   <p><span style="color:wheat">Route Name:</span> <%= @name %></p>
                   <p><span style="color:wheat">Route Grade:</span> <%= @rating %></p>
                   <p><span style="color:wheat">Pitches:</span> <%= @pitch %></p>
