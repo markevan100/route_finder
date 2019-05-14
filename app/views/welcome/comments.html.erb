@@ -1,4 +1,4 @@
-<body onload="changeImage('<%= @image %>')">
+<body onload="changeImage('<%= @route.image %>')">
   <div class="heroine-image" id="bgImage">
     <div class="hero-text">
       <div class="container">
@@ -8,7 +8,7 @@
               <div class="form-group routeInfo">
                 <div class="well well-lg each_box" id="testId">
                   <h2 style="color:black;">Most Recent Comment</h2>
-                    <%= @last %>
+                    <%= @route.new_comment %>
                 </div>
               </div>
             </form>
@@ -18,7 +18,7 @@
               <div class="form-group routeInfo">
                 <div class="well well-lg each_box">
                   <h2 style="color:black;">Oldest Comment</h2>
-                    <%= @first %>
+                    <%= @route.old_comment %>
                 </div>
               </div>
             </form>

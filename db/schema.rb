@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_13_145303) do
+ActiveRecord::Schema.define(version: 2019_05_14_014320) do
 
   create_table "routes", force: :cascade do |t|
     t.string "name"
     t.integer "route_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "rating"
+    t.float "stars"
+    t.integer "pitch"
+    t.float "lat"
+    t.float "lng"
+    t.binary "image"
+    t.text "old_comment"
+    t.text "new_comment"
   end
 
   create_table "user_routes", force: :cascade do |t|
