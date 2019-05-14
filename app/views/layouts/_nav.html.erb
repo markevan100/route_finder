@@ -2,6 +2,17 @@
   <nav class="navbar navbar-default" id="thenav">
     <h1><center> <%= link_to "Hit The Proj?", root_path, id: "navHomeLink" %></center></h1>
   </nav>
+  <ul class="nav navbar-right col-md-4">
+    <% if current_user %>
+    <li class="col-md-8 user-name text-right">
+      <span class="glyphicon glyphicon-user"></span>
+    </li>
+      <li><%= current_user.email %></li>
+      <li class="col-md-4 logout"><%= link_to("logout", destroy_user_session_path, class: "btn btn-xs btn-danger", method: :delete) %></li>
+    <% else %>
+      <li class="col-md-4 logout">login</li>
+    <% end %>
+  </ul>
 </div>
 
 <script>

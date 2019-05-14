@@ -1,5 +1,4 @@
 class Route < ApplicationRecord
-  include HTTParty #Seems to work without this, consider removing?
   require 'open-uri'
   require 'nokogiri'
 

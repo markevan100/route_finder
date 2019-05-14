@@ -1,20 +1,21 @@
 class WelcomeController < ApplicationController
-  
+
   def index
+    @user = current_user
   end
 
   def post
     route = Route.where(name: params[:name]).first
-    @@id = route.route_id
+    session[:route_id] = route.route_id
     redirect_to welcome_yourroute_path
   end
 
   def yourroute
-    @route = Route.build_route(@@id)
+    @route = Route.build_route(session[:route_id])
     @weather = Weather.new(@route.lat, @route.lng)
   end
 
   def comments
-    @route = Route.build_route(@@id)
+    @route = Route.build_route(session[:route_id])
   end
 end
