@@ -33,7 +33,7 @@ gem 'httparty', '~> 0.13.7'
 gem 'devise'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'rack-mini-profiler'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
