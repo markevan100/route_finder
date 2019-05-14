@@ -1,4 +1,6 @@
 class Weather
+  include HTTParty #Seems to work without this, consider removing?
+  
   attr_reader :temp, :humidity, :wind, :description
   def initialize(lat, lng)
     call_weather_api(lat, lng)

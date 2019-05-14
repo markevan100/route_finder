@@ -1,4 +1,4 @@
-<body onload="changeImage('<%= @image %>')">
+<body onload="changeImage('<%= @route.image %>')">
   <div class="heroine-image" id="bgImage">
     <div class="hero-text">
       <div class="container">
@@ -8,10 +8,10 @@
               <div class="form-group routeInfo">
                 <div class="well well-lg each_box" id="testId">
                   <h2 style="color:black;"><%= link_to "Your Route", welcome_comments_path, method: :get %> </h2>
-                  <p><span style="color:wheat">Route Name:</span> <%= @name %></p>
-                  <p><span style="color:wheat">Route Grade:</span> <%= @rating %></p>
-                  <p><span style="color:wheat">Pitches:</span> <%= @pitch %></p>
-                  <p><span style="color:wheat">Route Stars:</span> <%= @stars %></p>
+                  <p><span style="color:wheat">Route Name:</span> <%= @route.name %></p>
+                  <p><span style="color:wheat">Route Grade:</span> <%= @route.rating %></p>
+                  <p><span style="color:wheat">Pitches:</span> <%= @route.pitch %></p>
+                  <p><span style="color:wheat">Route Stars:</span> <%= @route.stars %></p>
                 </div>
               </div>
             </form>
