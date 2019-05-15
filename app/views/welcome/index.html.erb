@@ -9,7 +9,7 @@
 </div>
 
 <div>
-  <% if @user && @user.routes %>
-  <h1><%= @user.routes.first.name %></h1>
+  <% if @user && @user.routes.count > 0 %>
+    <%= render 'list' %>
   <% end %>
 </div>

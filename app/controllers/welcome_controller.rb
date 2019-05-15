@@ -1,7 +1,10 @@
 class WelcomeController < ApplicationController
 
   def index
-    @user = current_user
+    if current_user
+      @user = current_user
+      @user_routes = current_user.routes
+    end 
   end
 
   def post

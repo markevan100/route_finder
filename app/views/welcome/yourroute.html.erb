@@ -25,6 +25,12 @@
                   <p><span style="color:wheat">Temperature:</span> <%= @weather.temp %></p>
                   <p><span style="color:wheat">Humidity:</span> <%= @weather.humidity %></p>
                   <p><span style="color:wheat">Wind:</span> <%= @weather.wind %></p>
+                  <% if current_user.can_add_route?(@route.route_id) %>
+                    <p><%= link_to "Add to my favorites", user_routes_path(user: current_user,
+                                              route: @route.route_id),
+                                              class: "btn btn-xs btn-success",
+                                              method: :post %></p>
+                  <% end %>
                 </div>
               </div>
             </form>
