@@ -1,15 +1,26 @@
-<div class="hero-image">
-  <div class="hero-text">
-    <h1 style="font-size:30px">What route would you like to climb today?</h1>
-    <%= form_tag(welcome_index_path) do %>
-      <p style="color:black;"><%= text_field_tag :name, value = nil, id: "searchInput", placeholder:"Route Name" %></p>
-      <%= submit_tag 'Search', class: 'btn btn-primary', id: "searchButton" %>
-    <% end %>
+<div class="row">
+<% if @user && @user.routes.count > 0 %>
+  <div class="col-sm-10">
+<% else %>
+  <div class="col-sm-12">
+<% end %>
+    <div class="hero-image">
+      <div class="hero-text">
+        <h1 style="font-size:30px">What route would you like to climb today?</h1>
+        <%= form_tag(welcome_index_path) do %>
+        <p style="color:black;"><%= text_field_tag :name, value = nil, id: "searchInput", placeholder:"Route Name" %></p>
+        <%= submit_tag 'Search', class: 'btn btn-primary', id: "searchButton" %>
+        <% end %>
+      </div>
+    </div>
   </div>
+<% if @user && @user.routes.count > 0 %>
+  <div class="col-sm-2">
+    <%= render 'list' %>
+  </div>
+<% end %>
 </div>
 
 <div>
-  <% if @user && @user.routes.count > 0 %>
-    <%= render 'list' %>
-  <% end %>
+
 </div>

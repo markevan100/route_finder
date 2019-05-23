@@ -2,22 +2,33 @@
 
 
 
-<div class="navbar navbar-default navbar-static-top">
+<!-- <div class="navbar navbar-default navbar-static-top">
   <div class="container">
       <div class="navbar-collapse collapse navbar-responsive-collapse">
         <h1><center> <%= link_to "Hit The Proj?", root_path, id: "thenav" %></center></h1>
         <ul class="nav navbar-right col-md-4">
-          <% if current_user %>
-          <li class="col-md-8 user-name text-right">
-            <span class="glyphicon glyphicon-user"></span>
-            <%= current_user.email %>
-          </li>
-          <li class="col-md-4 logout"><%= link_to("logout", destroy_user_session_path, class: "btn btn-xs btn-danger", method: :delete) %></li>
-          <% else %>
-          <li class="col-md-4"><%= link_to("login", new_user_session_path, class: "btn btn-xs btn-primary") %></li>
-          <li class="col-md-4"><%= link_to("sign up", new_user_registration_path, class: "btn btn-xs btn-success") %></li>
-          <% end %>
         </ul>
       </div>
+  </div>
+</div> -->
+
+<div class="row">
+  <div class="col-xs-4">
+
+  </div>
+  <div class="col-xs-4 text-center">
+    <h1> <%= link_to "Hit The Proj?", root_path, id: "thenav" %></h1>
+  </div>
+  <div class="col-xs-4 text-right" style="margin-top: 29px;">
+      <% if current_user %>
+      <li class="user-name text-right">
+        <span class="glyphicon glyphicon-user"></span>
+        <%= current_user.email %>
+      </li>
+      <%= link_to("logout", destroy_user_session_path, class: "btn btn-danger", method: :delete) %>
+      <% else %>
+      <%= link_to("login", new_user_session_path, class: "btn btn-primary") %>
+      <%= link_to("sign up", new_user_registration_path, class: "btn btn-success") %>
+      <% end %>
   </div>
 </div>

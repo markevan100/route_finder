@@ -1,17 +1,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-#thenav {
-  a {
+a#thenav {
     font-size: 0.8em;
     color: #000;
     letter-spacing: -1px;
     font-weigth: none;
-  };
-  a:hover {
+  }
+
+a#thenav:hover {
     color: #000;
     text-decoration: none;
-  };
 }
 
 .hero-image {
