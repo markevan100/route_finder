@@ -8,8 +8,13 @@
       <div class="hero-text">
         <h1 style="font-size:30px">What route would you like to climb today?</h1>
         <%= form_tag(welcome_index_path) do %>
-        <p style="color:black;"><%= text_field_tag :name, value = nil, id: "searchInput", placeholder:"Route Name" %></p>
-        <%= submit_tag 'Search', class: 'btn btn-primary', id: "searchButton" %>
+        <% if params[:id] %>
+          <p style="color:black;"><%= text_field_tag :name, value = nil, id: "searchInput", placeholder: "We couldn't find that route. Please try again!" %></p>
+          <%= submit_tag 'Search', class: 'btn btn-primary', id: "searchButton" %>
+        <% else %>
+          <p style="color:black;"><%= text_field_tag :name, value = nil, id: "searchInput", placeholder:"Route Name" %></p>
+          <%= submit_tag 'Search', class: 'btn btn-primary', id: "searchButton" %>
+        <% end %>
         <% end %>
       </div>
     </div>

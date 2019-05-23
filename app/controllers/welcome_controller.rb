@@ -4,13 +4,17 @@ class WelcomeController < ApplicationController
     if current_user
       @user = current_user
       @user_routes = current_user.routes
-    end 
+    end
   end
 
   def post
     route = Route.where(name: params[:name]).first
-    session[:route_id] = route.route_id
-    redirect_to welcome_yourroute_path
+    if route
+      session[:route_id] = route.route_id
+      redirect_to welcome_yourroute_path
+    else
+      redirect_to root_path(:id => 1)
+    end
   end
 
   def yourroute
